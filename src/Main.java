@@ -1,51 +1,25 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        humanIMB humanIMB = new humanIMB(80,1.52);
-        System.out.println(humanIMB.Result());
-    }
-}
-class humanIMB {
-    public double W; //Weight Human
-    public double H; // Height Human
-    private static double imb;
-    public humanIMB(double w, double h) {
-        W = w;
-        H = h;
-        imb = W / (H * H);
-    }
-    public double takeW() {
-        return W;
-    }
-    public void putW(double w) {
-        W = w;
-        imb = W / (H * H);
-    }
-    public double takeH() {
-        return H;
-    }
-    public void putH(double h) {
-        H = h;
-        imb = W / (H * H);
-    }
-    public static double takeImt() {
-        return imb;
-    }
-    public static String Result() {
-        String  string = null;
-        if (imb >=18.5 & imb <25) {
-            string ="Norm";
-        }
-        if (imb >=25 & imb <30) {
-            string ="Warning! ";
-        }
-        if (imb >=30) {
-            string ="Fat";
-        }
-        if (imb <18.5) {
-            string ="Deficit";
-        }
-        return string;
+        HumanBMI person = new HumanBMI(80, 1.52); // 80 кг, 1.52 м
+        System.out.println("BMI: " + person.calculateBMI());
+        System.out.println("Category: " + person.getBMICategory());
+
+//        обробник подій введення з консолі тексту замість числа
+//        Scanner scanner = new Scanner(System.in);
+//        double weight = 0;
+//        double height = 0;
+//
+//        try {
+//            System.out.print("Enter weight (kg): ");
+//            weight = Double.parseDouble(scanner.nextLine());
+//
+//            System.out.print("Enter height (m): ");
+//            height = Double.parseDouble(scanner.nextLine());
+//        } catch (NumberFormatException e) {
+//            System.out.println("Error: Please enter a valid number!");
+//            System.exit(1); // або повторити введення
+//        }
     }
 }
